@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>@ViewBag.Title</title>
+    <style type="text/css">
+		body{
+			margin:0;
+			padding:0;
+		}
+		img{
+			border:0;
+			height:auto;
+			line-height:100%;
+			outline:none;
+			text-decoration:none;
+		}
+		table,td{
+			border-collapse:collapse;
+			mso-table-lspace:0pt;
+			mso-table-rspace:0pt;
+		}
+		#bodyTable{
+			height:100% !important;
+			margin:0;
+			padding:0;
+			width:100% !important;
+		}
+		#outlook a{
+			padding:0;
+		}
+		.ReadMsgBody{
+			width:100%;
+		}
+		.ExternalClass{
+			width:100%;
+		}
+		a,a span,a .yshortcuts{
+			background:none !important;
+			border-bottom:none !important;
+		}
+		h1{
+			color:#3F3F38;
+			display:block;
+			font-family:Helvetica;
+			font-size:24px;
+			font-weight:bold;
+			line-height:100%;
+			letter-spacing:normal;
+			margin-top:0;
+			margin-right:0;
+			margin-bottom:10px;
+			margin-left:0;
+			text-align:left;
+		}
+		h2{
+			color:#3F3F38;
+			display:block;
+			font-family:Helvetica;
+			font-size:20px;
+			font-weight:normal;
+			line-height:100%;
+			letter-spacing:normal;
+			margin-top:0;
+			margin-right:0;
+			margin-bottom:10px;
+			margin-left:0;
+			text-align:left;
+		}
+		h3{
+			color:#202020;
+			display:block;
+			font-family:Helvetica;
+			font-size:16px;
+			font-weight:bold;
+			line-height:100%;
+			letter-spacing:normal;
+			margin-top:0;
+			margin-right:0;
+			margin-bottom:10px;
+			margin-left:0;
+			text-align:left;
+		}
+		h4{
+			color:#202020;
+			display:block;
+			font-family:Helvetica;
+			font-size:14px;
+			font-weight:bold;
+			line-height:100%;
+			letter-spacing:normal;
+			margin-top:0;
+			margin-right:0;
+			margin-bottom:10px;
+			margin-left:0;
+			text-align:left;
+		}
+		#templatePreheader{
+			background-color:#FFFFFF;
+			border-bottom:0;
+		}
+		.preheaderContent{
+			color:#606060;
+			font-family:Helvetica;
+			font-size:11px;
+			line-height:125%;
+			text-align:left;
+		}
+		.preheaderContent a:link,.preheaderContent a:visited,.preheaderContent a .yshortcuts {
+			color:#0E8081;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		#templateHeader{
+			background-color:#FFFFFF;
+			border-top:0;
+			border-bottom:0;
+		}
+		.headerContent{
+			color:#3F3F38;
+			font-family:Helvetica;
+			font-size:18px;
+			font-weight:bold;
+			line-height:100%;
+			padding-top:20px;
+			padding-right:0;
+			padding-bottom:20px;
+			padding-left:0;
+			text-align:center;
+			vertical-align:middle;
+		}
+		.headerContent a:link,.headerContent a:visited,.headerContent a .yshortcuts {
+			color:#0E8081;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		#headerImage{
+			height:auto;
+			max-width:600px !important;
+		}
+		#templateBody{
+			background-color:#FFFFFF;
+			border-top:0;
+			border-bottom:0;
+		}
+		#bodyContentBlock{
+			background-color:#FFFFFF;
+			border-top:0;
+			border-bottom:1px solid #CCCCCC;
+		}
+		.bodyContent{
+			color:#202020;
+			font-family:Helvetica;
+			font-size:15px;
+			line-height:150%;
+			text-align:left;
+		}
+		.bodyContent a:link,.bodyContent a:visited,.bodyContent a .yshortcuts {
+			color:#0E8081;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		.templateButton{
+			-moz-border-radius:3px;
+			-webkit-border-radius:3px;
+			background-color:#23B3B4;
+			border-radius:3px;
+		}
+		.templateButtonContent,.templateButtonContent a:link,.templateButtonContent a:visited,.templateButtonContent a .yshortcuts {
+			color:#FFFFFF;
+			font-family:Helvetica;
+			font-size:18px;
+			font-weight:bold;
+			line-height:100%;
+			text-align:center;
+			text-decoration:none;
+		}
+		.bodyContent img{
+			display:inline;
+			height:auto;
+		}
+		body,#bodyTable{
+			background-color:#FFFFFF;
+		}
+		#templateFooter{
+			border-top:0;
+		}
+		.footerContent{
+			color:#606060;
+			font-family:Helvetica;
+			font-size:10px;
+			line-height:150%;
+			text-align:left;
+		}
+		.footerContent a:link,.footerContent a:visited,.footerContent a .yshortcuts {
+			color:#0E8081;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		.footerContent img{
+			display:inline;
+		}
+		#monkeyRewards img{
+			max-width:190px;
+		}
+	@@media only screen and (max-width: 480px){
+		body,table,td,p,a,li,blockquote{
+			-webkit-text-size-adjust:none !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		body{
+			width:auto !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		table[id=templatePreheader]{
+			display:none;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		h1{
+			font-size:28px !important;
+			line-height:100% !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		h2{
+			font-size:24px !important;
+			line-height:100% !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		h3{
+			font-size:20px !important;
+			line-height:100% !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		h4{
+			font-size:18px !important;
+			line-height:100% !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		img[id=headerImage]{
+			height:auto !important;
+			width:185px !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		.headerContent{
+			font-size:22px !important;
+			line-height:150% !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		.bodyContent{
+			font-size:18px !important;
+			line-height:125% !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		.templateButtonContent,.templateButtonContent a:link,.templateButtonContent a:visited,.templateButtonContent a .yshortcuts {
+			font-size:15px !important;
+			line-height:125% !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		.footerContent{
+			font-size:14px !important;
+			line-height:150% !important;
+		}
+
+}	@@media only screen and (max-width: 480px){
+		td[class=footerContent] a{
+			display:block !important;
+		}
+
+}</style>
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="margin: 0;
+    padding: 0; background-color: #FFFFFF;">
+    <center>
+        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 0;background-color: #FFFFFF;height: 100% !important;width: 100% !important;">
+            	<tr>
+                	<td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                    	<!-- // BEGIN PREHEADER -->
+                        <table border="0" cellpadding="10" cellspacing="0" width="100%" id="templatePreheader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-bottom: 0;">
+                        	<tr>
+                            	<td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                	<table border="0" cellpadding="0" cellspacing="0" width="320" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                    	<tr>
+                                        	<td valign="top" class="preheaderContent" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #606060;font-family: Helvetica;font-size: 11px;line-height: 125%;text-align: left;">
+                                            	@ViewBag.Preheader
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- END PREHEADER \\ -->
+                    	<!-- // BEGIN CONTAINER -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                        	<tr>
+                            	<td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                	<!-- // BEGIN HEADER -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
+                                    	<tr>
+                                        	<td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                            	<table border="0" cellpadding="0" cellspacing="0" width="320" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                                	<tr>
+                                                        <td class="headerContent" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3F3F38;font-family: Helvetica;font-size: 18px;font-weight: bold;line-height: 100%;padding-top: 20px;padding-right: 0;padding-bottom: 20px;padding-left: 0;text-align: center;vertical-align: middle;">
+                                                            <img src="/assets/img/logo-airheads.png" alt border="0" style="margin: 0;padding: 0;max-width: 320px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" id="headerImage campaign-icon">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- END HEADER \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                	<!-- // BEGIN BODY -->
+                                	<table border="0" cellpadding="20" cellspacing="0" width="100%" id="templateBody" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
+                                    	<tr>
+                                        	<td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                            	<table border="0" cellpadding="20" cellspacing="0" width="320" id="bodyContentBlock" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-top: 0;border-bottom: 1px solid #CCCCCC;">
+                                                	<tr>
+                                                        <td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                                                <tr>
+                                                                    <td valign="top" class="bodyContent" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #202020;font-family: Helvetica;font-size: 15px;line-height: 150%;text-align: left;">
+                                                                    	
+                                                                        @RenderBody();
+
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- END BODY \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                	<!-- // BEGIN FOOTER -->
+                                	<table border="0" cellpadding="40" cellspacing="0" width="100%" id="templateFooter" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-top: 0;">
+                                    	<tr>
+                                        	<td align="center" valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                            	<table border="0" cellpadding="0" cellspacing="0" width="320" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                                	 <tr>
+                                                    	<td valign="top" class="footerContent" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #606060;font-family: Helvetica;font-size: 14px;line-height: 150%;text-align: center;">
+                                                        	<a href="http://twitter.com/bubbleheadsnyc" style="color: #000000;font-weight: normal;text-decoration: underline;">Follow on Twitter</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <a href="http://facebook.com/bubbleheadsnyc" style="color: #000000;font-weight: normal;text-decoration: underline;">Friend on Facebook</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="bottom" class="footerContent" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #606060;font-family: Helvetica;font-size: 10px;line-height: 80px;text-align: center;">
+                                                            <em>Copyright &copy; @DateTime.Now.Year.ToString() Bubbleheads, All rights reserved.</em>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- END FOOTER \\ -->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- END CONTAINER \\ -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+</body>
+</html>
