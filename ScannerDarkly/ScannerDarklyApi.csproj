@@ -156,12 +156,23 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DigestController.cs" />
     <Compile Include="Controllers\ScanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ConfigurationSettings.cs" />
     <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Models\Alert.cs" />
+    <Compile Include="Models\AlertRepository.cs" />
+    <Compile Include="Models\ITwitterListRepository.cs" />
+    <Compile Include="Models\TwitterListRepository.cs" />
+    <Compile Include="Models\TwitterList.cs" />
+    <Compile Include="Models\Tweet.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerRepository.cs" />
+    <Compile Include="Models\IAlertRepository.cs" />
+    <Compile Include="Models\ICustomerRepository.cs" />
     <Compile Include="Models\TwitterRepository.cs" />
     <Compile Include="Models\IUserMailer.cs" />
     <Compile Include="Models\StripeRepository.cs" />

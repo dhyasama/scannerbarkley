@@ -12,8 +12,7 @@ namespace ScannerDarkly.Controllers
     public class ScanController : ApiController
     {
         private static readonly TwitterRepository _twitter = new TwitterRepository();
-        private static readonly TwilioRepository _twilio = new TwilioRepository();
-        private static readonly IUserMailer _mailer = new UserMailer();
+        private static readonly IAlertRepository _alerts = new AlertRepository();
 
         // POST api/scan
         public void Get() // this will be post, but set to GET for easy testing
@@ -33,8 +32,7 @@ namespace ScannerDarkly.Controllers
 
                 foreach (var status in statusList.Statuses)
                 {
-                    // check each username/text pair against our database of customers and keywords
-                    CrossCheck(status.User.Identifier.ScreenName, status.Text);
+                    CrossCheck(status);
                 }
 
                 // todo - mark list as done
@@ -42,13 +40,14 @@ namespace ScannerDarkly.Controllers
             }
         }
 
-        private void CrossCheck(string screenname, string text)
+        private void CrossCheck(LinqToTwitter.Status status)
         {
             Dictionary<string, Dictionary<string, List<string>>> searchMap = GetSearchMap();
+            string screenName = status.User.Identifier.ScreenName;
 
-            if (searchMap.ContainsKey(screenname))
+            if (searchMap.ContainsKey(screenName))
             {
-                Dictionary<string, List<string>> customerKeywords = searchMap[screenname];
+                Dictionary<string, List<string>> customerKeywords = searchMap[screenName];
 
                 foreach (string key in customerKeywords.Keys)
                 {
@@ -56,15 +55,27 @@ namespace ScannerDarkly.Controllers
 
                     foreach (string keyword in keywords)
                     {
-                        if (text.ToUpper().Contains(keyword.ToUpper()))
+                        if (status.Text.ToUpper().Contains(keyword.ToUpper()))
                         {
-                            // todo - log to database
-                            // todo - check if user wants email or text notifications
-                            // todo - check if user wants immediate alert or daily digest
+                            // model tweet
+                            Tweet tweet = new Tweet();
+                            tweet.name = status.User.Name;
+                            tweet.screenName = status.User.Identifier.ScreenName;
+                            tweet.text = status.Text;
+                            tweet.timestamp = status.CreatedAt;
+                            tweet.tweetId = status.ID;
 
-                            //_twilio.SendSms("2079396565", "2079396565", screenname + "'s Tweet contains " + keyword);
+                            // model alert
+                            Alert alert = new Alert();
+                            alert.customerId = key;
+                            alert.discoveryTimestamp = DateTime.UtcNow;
+                            alert.sent = false;
+                            alert.sentTimestamp = DateTime.MinValue;                            
+                            alert.sentTo = "";
+                            alert.tweet = tweet;
 
-                            //bool sent = _mailer.Alert("dhyasama@gmail.com", screenname + "'s Tweet contains " + keyword);
+                            // log to database
+                            _alerts.AddAlert(alert);
                         }
                     }
                 }
