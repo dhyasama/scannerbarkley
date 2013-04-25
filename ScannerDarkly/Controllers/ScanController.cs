@@ -16,7 +16,7 @@ namespace ScannerDarkly.Controllers
         private static readonly IUserMailer _mailer = new UserMailer();
 
         // POST api/scan
-        public void Get(string key) // this will be post, but set to GET for easy testing
+        public void Get() // this will be post, but set to GET for easy testing
         {
             // get list of twitter lists
             List<String> slugs = _twitter.GetListSlugs();
